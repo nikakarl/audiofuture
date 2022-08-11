@@ -1,10 +1,16 @@
 import React from 'react';
-import videoBg from './assets/AF_BG_WEB.mp4'
+import './App.css';
 
 function App() {
   return (
-    <div className='main'>
-      <video src={videoBg} autoPlay loop muted/>
+    <div className="App">
+      <div className="background-container">
+        <div className="stars"></div>
+        <div className="twinkling"></div>
+      </div>
+      <div className="logo-container">
+        <h1 className="logo">AudioFuture</h1>
+      </div>
     </div>
   );
 }

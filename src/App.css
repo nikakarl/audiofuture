@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+}
+
+.logo-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.logo {
+  display: block;
+  color: #FFF;
+  font-family: arial;
+  font-size: 92px;
+  z-index: 5;
+  text-indent: -99999px;
+  width: 80%;
+  background: url(./Images/AudioFuture-logo.png) no-repeat center center;
+  background-size: contain;
+}
+
+@media only screen and (min-width: 992px) {
+  .logo {
+    width: 800px;
+  }
+}
+
+/* background stuff */
+
+.background-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.stars {
+  position: absolute;
+  width: 200vw;
+  height: 200vh;
+  left: -100vw;
+  top: -100vh;
+  background: url(./Images/stars.png) repeat top center;
+  z-index: 0;
+  animation: stars-loop 5s alternate ease-in-out infinite;
+}
+
+.twinkling{
+  background: transparent url(./Images/twinkling.png) repeat top center;
+  z-index: 1;
+  animation: move-twink-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+@keyframes stars-loop {
+  0% {
+    transform-origin: left top;
+    transform: rotate(0deg) translateX(-50) translateY(0px);
+  }
+  100% {
+    transform-origin: left top;
+    transform: rotate(1deg) translateX(200px) translateY(-75px);
+  }
+}
+
+.under-construction {
+  display: block;
+  color: #FFF;
+  font-family: 'Monda', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+  z-index: 5;
+  letter-spacing: 2px;
+}
+
+@media only screen and (min-width: 992px) {
+  .under-construction {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(300deg, deepskyblue, darkviolet, blue);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+  opacity: 0.3;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
